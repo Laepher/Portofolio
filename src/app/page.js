@@ -1,17 +1,8 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
-  };
 
   return (
     <div className={styles.container}>
@@ -420,73 +411,41 @@ export default function Home() {
             <div className={styles.sectionUnderline}></div>
           </div>
 
-          <div className={styles.contactGrid}>
-            <div className={styles.contactDetails}>
-              <h3>Mari Berkolaborasi</h3>
-              <p className={styles.contactText}>
-                Saya selalu terbuka untuk berdiskusi mengenai proyek web, integrasi kecerdasan buatan (AI), program magang, maupun kolaborasi tech lainnya. Silakan hubungi saya melalui jalur kontak di bawah ini.
-              </p>
+          <div className={styles.contactContainer}>
+            <p className={styles.contactText}>
+              Saya selalu terbuka untuk berdiskusi mengenai proyek web, integrasi kecerdasan buatan (AI), program magang, maupun kolaborasi teknologi lainnya. Silakan hubungi saya secara langsung melalui salah satu opsi kontak di bawah ini.
+            </p>
 
-              <div className={styles.contactDirectList}>
-                <a href="tel:+6281328264788" className={styles.contactDirectItem}>
-                  <div className={styles.contactDirectIcon}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  </div>
-                  <div>
-                    <span className={styles.contactDirectLabel}>Telepon / WhatsApp</span>
-                    <span className={styles.contactDirectValue}>+62 813-2826-4788</span>
-                  </div>
-                </a>
+            <div className={styles.contactDirectGrid}>
+              <a href="tel:+6281328264788" className={styles.contactDirectItem}>
+                <div className={styles.contactDirectIcon}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <span className={styles.contactDirectLabel}>Telepon / WhatsApp</span>
+                  <span className={styles.contactDirectValue}>+62 813-2826-4788</span>
+                </div>
+              </a>
 
-                <a href="mailto:raphael.rhinovaldi11@gmail.com" className={styles.contactDirectItem}>
-                  <div className={styles.contactDirectIcon}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  </div>
-                  <div>
-                    <span className={styles.contactDirectLabel}>E-mail Resmi</span>
-                    <span className={styles.contactDirectValue}>raphael.rhinovaldi11@gmail.com</span>
-                  </div>
-                </a>
+              <a href="mailto:raphael.rhinovaldi11@gmail.com" className={styles.contactDirectItem}>
+                <div className={styles.contactDirectIcon}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div>
+                  <span className={styles.contactDirectLabel}>E-mail Resmi</span>
+                  <span className={styles.contactDirectValue}>raphael.rhinovaldi11@gmail.com</span>
+                </div>
+              </a>
 
-                <div className={styles.contactDirectItem}>
-                  <div className={styles.contactDirectIcon}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  </div>
-                  <div>
-                    <span className={styles.contactDirectLabel}>Domisili Saat Ini</span>
-                    <span className={styles.contactDirectValue}>Surakarta, Jawa Tengah, Indonesia</span>
-                  </div>
+              <div className={styles.contactDirectItem}>
+                <div className={styles.contactDirectIcon}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <span className={styles.contactDirectLabel}>Domisili</span>
+                  <span className={styles.contactDirectValue}>Surakarta, Jawa Tengah</span>
                 </div>
               </div>
-            </div>
-
-            <div className={styles.contactFormCard}>
-              <h3>Kirim Pesan Langsung</h3>
-              <form onSubmit={handleSubmit} className={styles.contactForm}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Nama Lengkap</label>
-                  <input type="text" id="name" required placeholder="Masukkan nama Anda..." />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Alamat Email</label>
-                  <input type="email" id="email" required placeholder="Masukkan email Anda..." />
-                </div>
-                <div className={styles.formGroup}>
-                  <label htmlFor="message">Pesan Anda</label>
-                  <textarea id="message" rows="5" required placeholder="Tuliskan pesan atau detail kolaborasi di sini..."></textarea>
-                </div>
-                <button type="submit" className={styles.submitBtn}>
-                  Kirim Pesan
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                </button>
-              </form>
-
-              {formSubmitted && (
-                <div className={styles.formSuccessMessage}>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                  <span>Pesan terkirim! Terima kasih telah menghubungi saya.</span>
-                </div>
-              )}
             </div>
           </div>
         </section>

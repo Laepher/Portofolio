@@ -826,66 +826,67 @@
 }
 
 /* [//] Contact Section styling */
-.contactGrid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 4rem;
-}
-
-.contactDetails h3,
-.contactFormCard h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  color: var(--text-primary);
+.contactContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contactText {
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.contactDirectList {
-  display: flex;
-  flex-direction: column;
+.contactDirectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
+  justify-content: center;
 }
 
 .contactDirectItem {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 1.25rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.02);
+  padding: 2.25rem 1.5rem;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 16px;
   transition: var(--transition-smooth);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .contactDirectItem:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: var(--accent-teal);
-  transform: translateX(4px);
+  background: var(--bg-card-hover);
+  border-color: rgba(20, 184, 166, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(20, 184, 166, 0.06);
 }
 
 .contactDirectIcon {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   background: rgba(20, 184, 166, 0.1);
   color: var(--accent-teal);
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
   transition: var(--transition-bounce);
 }
 
 .contactDirectItem:hover .contactDirectIcon {
   background: var(--accent-teal);
   color: white;
-  transform: rotate(5deg) scale(1.05);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 15px var(--accent-teal-glow);
 }
 
 .contactDirectLabel {
@@ -895,109 +896,15 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 700;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
 }
 
 .contactDirectValue {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-primary);
-}
-
-/* Contact Form Card */
-.contactFormCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 2.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.formGroup label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.formGroup input,
-.formGroup textarea {
-  background: #0c111f;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: var(--transition-smooth);
-  width: 100%;
-}
-
-.formGroup input::placeholder,
-.formGroup textarea::placeholder {
-  color: var(--text-muted);
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus {
-  outline: none;
-  border-color: var(--accent-teal);
-  box-shadow: 0 0 12px var(--accent-teal-glow);
-  background: #0f1627;
-}
-
-.submitBtn {
-  background: linear-gradient(135deg, var(--accent-teal), #0d9488);
-  color: white;
-  border-radius: 8px;
-  padding: 0.9rem;
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.2);
-  transition: var(--transition-bounce);
-  margin-top: 0.5rem;
-}
-
-.submitBtn svg {
-  transition: var(--transition-smooth);
-}
-
-.submitBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(20, 184, 166, 0.4);
-}
-
-.submitBtn:hover svg {
-  transform: translate(2px, -2px);
-}
-
-.formSuccessMessage {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(20, 184, 166, 0.1);
-  color: var(--accent-teal);
-  border: 1px solid rgba(20, 184, 166, 0.2);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1.5rem;
-  animation: fadeIn 0.4s ease-out;
+  word-break: break-all;
 }
 
 /* [//] Footer Section styling */
@@ -1095,9 +1002,9 @@
     height: 240px;
   }
   
-  .contactGrid {
+  .contactDirectGrid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1.25rem;
   }
   
   .sectionTitle {
@@ -1105,8 +1012,7 @@
   }
   
   .personalInfoCard,
-  .educationCard,
-  .contactFormCard {
+  .educationCard {
     padding: 1.75rem;
   }
 }
